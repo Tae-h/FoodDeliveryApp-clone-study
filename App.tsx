@@ -21,11 +21,22 @@ function HomeScreen({navigation}: HomeScreenProps) {
   }, [navigation]);
 
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <TouchableHighlight onPress={onClick}>
-        <Text>Home Screen</Text>
-      </TouchableHighlight>
-    </View>
+    <>
+      <View style={{flex: 2, alignItems: 'center', justifyContent: 'center'}}>
+        <TouchableHighlight onPress={onClick}>
+          <Text>Home Screen</Text>
+        </TouchableHighlight>
+      </View>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: 'yellow',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <Text>test</Text>
+      </View>
+    </>
   );
 }
 
@@ -35,15 +46,18 @@ function DetailsScreen({navigation}: DetailsScreenProps) {
   }, [navigation]);
 
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <TouchableHighlight onPress={onClick}>
-        <Text>Details Screen</Text>
-      </TouchableHighlight>
-    </View>
+    <>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <TouchableHighlight onPress={onClick}>
+          <Text>Details Screen</Text>
+        </TouchableHighlight>
+      </View>
+    </>
   );
 }
 
 const Stack = createNativeStackNavigator();
+
 function App() {
   return (
     <NavigationContainer>
@@ -51,7 +65,7 @@ function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{title: 'Overview'}}
+          options={{title: '홈화면', headerShown: true}}
         />
         <Stack.Screen name="Details">
           {props => <DetailsScreen {...props} />}
