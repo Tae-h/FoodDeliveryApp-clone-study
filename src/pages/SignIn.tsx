@@ -18,14 +18,14 @@ function SignIn({navigation}: SignInScreenProps) {
   const emailRef = useRef<TextInput | null>(null);
   const passwordRef = useRef<TextInput | null>(null);
 
-  const onChangeEmail = useCallback((text: any) => {
+  const onChangeEmail = useCallback((text: string) => {
     // e.target.value  아님 text가 바로 들어 있음!!
-    setEmail(text);
+    setEmail(text.trim());
   }, []);
 
-  const onChangePassword = useCallback((text: any) => {
+  const onChangePassword = useCallback((text: string) => {
     // e.target.value  아님 text가 바로 들어 있음!!
-    setPassword(text);
+    setPassword(text.trim());
   }, []);
 
   const onSubmit = useCallback(() => {
