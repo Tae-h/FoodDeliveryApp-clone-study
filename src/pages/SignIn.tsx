@@ -42,6 +42,7 @@ function SignIn({navigation}: SignInScreenProps) {
   }, [email, password]);
 
   const toSignUp = useCallback(() => {
+    console.log('go SignUp');
     navigation.navigate('SignUp');
   }, [navigation]);
 
